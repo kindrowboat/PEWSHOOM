@@ -1,0 +1,47 @@
+stasm version 3.0
+Command: stasm -iS -c ../tasm-example/example.conf ../data/test-image.jpg 
+1 image
+Reading ../data/test-image.jpg 
+Reading ../tasm-example/example.conf
+{
+sAsmFile "./example.asm"
+nEigs 8 # nbr of shape model eigs to use, just a guess
+}
+Reading ./example.asm
+{
+nPoints 12
+fXm2vts 0
+nLevs 4
+PyramidRatio 2
+nPyramidReduceMethod 0
+fExplicitPrevNext 0
+NormalizedProfLen 1
+nStandardFaceWidth 180
+fBilinearRescale 1
+nTrimCovar 3
+SigmoidScale 1000
+}
+Adjusted params:
+iLev 0 nEigs 8 nEigsFinal 8 BMax 1.8 BMaxFinal 3
+iLev 1 nEigs 8 nEigsFinal 8 BMax 1.8 BMaxFinal 3
+iLev 2 nEigs 8 nEigsFinal 8 BMax 1.8 BMaxFinal 3
+iLev 3 nEigs 8 nEigsFinal 8 BMax 1.8 BMaxFinal 3
+
+[nTotalImages 1 nGoodImages 1 Mean times: FaceDet 0.125 AsmSearch 0.109 Both 0.234 secs]
+Writing 1-test-image.bmp Writing s-test-image.bmp 
+"test-image"
+{ 12 2
+  -33.26    16.92
+  -22.19    19.08
+  -12.42    17.99
+   28.97    19.53
+   38.27    21.38
+   50.28    20.19
+    1.60   -14.98
+   18.94   -13.16
+  -13.37   -41.18
+   10.77   -32.55
+   35.52   -38.84
+   11.38   -47.59
+}
+

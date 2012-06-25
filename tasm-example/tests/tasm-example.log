@@ -1,0 +1,83 @@
+tasm version 3.0
+Command: tasm -o example.asm ../tasm-example/tasm-example.conf 
+Reading ../tasm-example/tasm-example.conf
+{
+sShapeFile "../tasm-example/example.shape"
+}
+Reading ../tasm-example/example.shape 20 mats [0.0 secs]
+Read 20 shapes
+First few shapes are B00 B01 B02 B03 B04 ...
+Reference shape 0000 B00 has 12 landmarks
+Aligning shapes to B00 [0.0 secs]
+Outermost landmarks (0,5) angle -0.592 degrees
+Reading ../tasm-example/example.shape 20 mats [0.0 secs]
+Opening ../tasm-example/images/B00.pgm unsuccesful, trying next directory
+Opening ../tasm-example/images/B00.jpg 
+Generating ViolaJones mean shape Opening ../tasm-example/images/B01.jpg 
+Opening ../tasm-example/images/B02.jpg 
+Opening ../tasm-example/images/B03.jpg 
+Opening ../tasm-example/images/B04.jpg 
+Opening ../tasm-example/images/B05.jpg 
+Opening ../tasm-example/images/B06.jpg 
+Opening ../tasm-example/images/B07.jpg 
+Opening ../tasm-example/images/B08.jpg 
+Opening ../tasm-example/images/B09.jpg 
+Opening ../tasm-example/images/B10.jpg 
+Opening ../tasm-example/images/B11.jpg 
+Opening ../tasm-example/images/B12.jpg 
+Opening ../tasm-example/images/B13.jpg 
+Opening ../tasm-example/images/B14.jpg 
+Opening ../tasm-example/images/B15.jpg 
+Opening ../tasm-example/images/B16.jpg 
+Opening ../tasm-example/images/B17.jpg 
+Opening ../tasm-example/images/B18.jpg 
+Opening ../tasm-example/images/B19.jpg 
+used 20 face det shapes, 0 from example.shape
+Opening ../tasm-example/images/B00.jpg 
+
+Generating Rowley mean shape Opening ../tasm-example/images/B01.jpg 
+Opening ../tasm-example/images/B02.jpg 
+Opening ../tasm-example/images/B03.jpg 
+Opening ../tasm-example/images/B04.jpg 
+Opening ../tasm-example/images/B05.jpg 
+Opening ../tasm-example/images/B06.jpg 
+Opening ../tasm-example/images/B07.jpg 
+Opening ../tasm-example/images/B08.jpg 
+Opening ../tasm-example/images/B09.jpg 
+Opening ../tasm-example/images/B10.jpg 
+Opening ../tasm-example/images/B11.jpg 
+Opening ../tasm-example/images/B12.jpg 
+Opening ../tasm-example/images/B13.jpg 
+Opening ../tasm-example/images/B14.jpg 
+Opening ../tasm-example/images/B15.jpg 
+Opening ../tasm-example/images/B16.jpg 
+Opening ../tasm-example/images/B17.jpg 
+Opening ../tasm-example/images/B18.jpg 
+Opening ../tasm-example/images/B19.jpg 
+used 19 face det shapes, 0 from example.shape (1 no eyes, 2 one eye)
+ProfSpecs 0,0:00000041 
+Reading images 
+Opening ../tasm-example/images/B00.jpg 
+Opening ../tasm-example/images/B01.jpg 
+Opening ../tasm-example/images/B02.jpg 
+Opening ../tasm-example/images/B03.jpg 
+Opening ../tasm-example/images/B04.jpg 
+Opening ../tasm-example/images/B05.jpg 
+Opening ../tasm-example/images/B06.jpg 
+Opening ../tasm-example/images/B07.jpg 
+Opening ../tasm-example/images/B08.jpg 
+Opening ../tasm-example/images/B09.jpg 
+Opening ../tasm-example/images/B10.jpg 
+Opening ../tasm-example/images/B11.jpg 
+Opening ../tasm-example/images/B12.jpg 
+Opening ../tasm-example/images/B13.jpg 
+Opening ../tasm-example/images/B14.jpg 
+Opening ../tasm-example/images/B15.jpg 
+Opening ../tasm-example/images/B16.jpg 
+Opening ../tasm-example/images/B17.jpg 
+Opening ../tasm-example/images/B18.jpg 
+Opening ../tasm-example/images/B19.jpg 
+[2.4 secs]
+Generating stats [0.0 secs]
+Writing example.asm 
+Generated example.asm [total time 13.2 secs]

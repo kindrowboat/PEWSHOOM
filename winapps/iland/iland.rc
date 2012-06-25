@@ -1,0 +1,30 @@
+// iland.rc
+
+#include "windows.h"
+#include "iland.hpp"
+
+IDR_ILAND_BUTTONS       BITMAP  MOVEABLE PURE   "iland.bmp"
+ILAND                   ICON    DISCARDABLE     "iland.ico"
+
+HelpDlg DIALOG DISCARDABLE 20, 20, 100, 94
+STYLE DS_MODALFRAME | WS_POPUP
+CAPTION "Wasm Help"
+FONT 8, "MS Sans Serif"
+{
+    ICON            "iland",IDC_STATIC,         4,  8, 24, 24
+    CTEXT           "",    IDC_VERSION,       30,  4, 70,  8
+    CTEXT           "based on", IDC_STATIC,   30, 12, 70,  8
+    CTEXT           "",    IDC_STASM_VERSION, 30, 20  70,  8
+    CTEXT           "EXPERIMENTAL", IDC_STATIC, 10, 40, 80, 28
+    DEFPUSHBUTTON  "OK",      IDOK,           34, 74, 30, 14
+}
+
+DLG DIALOG DISCARDABLE  0, 0, 180, 104
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Select landmark"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_TEXT,5,5,210,38
+    DEFPUSHBUTTON   "&Back",IDC_BACK,20,44,40,16,BS_PUSHBUTTON|WS_TABSTOP
+    DEFPUSHBUTTON   "&Next",IDC_NEXT,70,44,40,16,BS_PUSHBUTTON|WS_TABSTOP
+END

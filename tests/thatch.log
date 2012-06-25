@@ -1,0 +1,7 @@
+thatch version 1.0 based on stasm version 3.0
+../data/test-image.jpg: 
+Reading C:\a\stasm\stasm\data/mu-68-1d.conf
+Reading C:\a\stasm\stasm\data/mu-68-1d.asm
+Reading C:\a\stasm\stasm\data/mu-76-2d.conf
+Reading C:\a\stasm\stasm\data/mu-76-2d.asm
+th-test-image-org.bmp th-test-image.bmp th-test-image-up.bmp 

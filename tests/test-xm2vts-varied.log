@@ -1,0 +1,121 @@
+tasm version 3.0
+Command: tasm -o test-xm2vts-varied.asm ../tests/tasm-test20-xm2vts-varied.conf 
+Reading ../tests/tasm-test20-xm2vts-varied.conf
+{
+sShapeFile "../../stasm/data/xm84.shape"
+fXm2vts 1           # use landmarks in landmark.hpp
+fSynthEyePoints 1   # synthesize 8 right eye points from left eye
+nMaxShapes 70       # need about 70 shapes to prevent covar mat problems
+sTagRegex " m"      # matches all XM2VTS shapes, including mirrored XM2VTS shapes
+AttrMask0 0xf1      # exclude NnFailed,Expression,EyesClosed,Obscured,BadIm
+AttrMask1 0x0
+nLev2d 0            # use 2D profiles for level 0 (full scale) only
+nWhich2d 2          # 1 is GEN2D_Internal
+PyrReduceMethod 1   # 1 is IM_BILINEAR
+ProfType 0x41       # redundant, but checks that we can read hex values
+ProfType2d 0x85     # ditto
+nProfWidth1d 5      # 2*2+1
+nProfWidth2d 3      # 1*2+1
+nTrimCovar 2
+nStandardFaceWidth 100
+fExplicitPrevNext 1
+fUnobscuredFeats 1
+NormalizedProfLen 2
+SigmoidScale 0      # 0 means no sigmoid
+nSeed_ShapeNoise 5
+nSeed_SelectShapes 6
+ShapeNoise 0.6
+xRhsStretchShape 0.06
+}
+Matching " m" Mask0 f1 [NnFailed,Expression,EyesClosed,Obscured,BadIm] Mask1 0 []
+Reading ../../stasm/data/xm84.shape 12962 mats [1.3 secs]
+Ignored 9240 face detector and underscore shapes
+Selected a random sample of 70 shapes from 3722 shapes (seed=6)
+First few shapes are m000_21 m023_12 m024_12 m025_21 m042_11 ...
+Synthesizing 8 eye landmarks for a total of 84 landmarks, synthesized 31 eyes
+Reference shape 0000 m000_21 has 84 landmarks
+Aligning shapes to m000_21 [0.2 secs]
+Outermost landmarks (0,13) angle -9.13 degrees
+Eyes (31,36) angle 1.66 degrees
+Used only 31 of 70 shapes for eigs because of missing landmarks
+Reading ../../stasm/data/xm84.shape 13960 mats [1.3 secs]
+Generating ViolaJones mean shape used 31 face det shapes, all from xm84.shape
+Generating Rowley mean shape used 31 face det shapes, all from xm84.shape (0 no eyes, 0 one eye)
+ProfSpecs 0,0:00000041 0,15:80000085 1,0:00000041 
+Reading images 
+Opening /a1/faces/m2/pgm/m000_21.pgm 
+Opening /a1/faces/m2/pgm/m023_12.pgm 
+Opening /a1/faces/m2/pgm/m024_12.pgm 
+Opening /a1/faces/m2/pgm/m025_21.pgm 
+Opening /a1/faces/m2/pgm/m042_11.pgm 
+Opening /a1/faces/m2/pgm/m051_22.pgm 
+Opening /a1/faces/m2/pgm/m054_32.pgm 
+Opening /a1/faces/m2/pgm/m083_41.pgm 
+Opening /a1/faces/m2/pgm/m089_31.pgm 
+Opening /a1/faces/m2/pgm/m096_42.pgm 
+Opening /a1/faces/m2/pgm/m102_11.pgm 
+Opening /a1/faces/m2/pgm/m115_42.pgm 
+Opening /a1/faces/m2/pgm/m116_31.pgm 
+Opening /a1/faces/m2/pgm/m130_12.pgm 
+Opening /a1/faces/m2/pgm/m135_31.pgm 
+Opening /a1/faces/m2/pgm/m160_22.pgm 
+Opening /a1/faces/m2/pgm/m170_32.pgm 
+Opening /a1/faces/m2/pgm/m171_11.pgm 
+Opening /a1/faces/m2/pgm/m182_31.pgm 
+Opening /a1/faces/m2/pgm/m203_42.pgm 
+Opening /a1/faces/m2/pgm/m212_12.pgm 
+Opening /a1/faces/m2/pgm/m231_21.pgm 
+Opening /a1/faces/m2/pgm/m244_22.pgm 
+Opening /a1/faces/m2/pgm/m289_21.pgm 
+Opening /a1/faces/m2/pgm/m292_32.pgm 
+Opening /a1/faces/m2/pgm/m316_12.pgm 
+Opening /a1/faces/m2/pgm/m321_31.pgm 
+Opening /a1/faces/m2/pgm/m325_41.pgm 
+Opening /a1/faces/m2/pgm/m332_22.pgm 
+Opening /a1/faces/m2/pgm/mr007_32.pgm unsuccessful, trying next directory
+Opening /a1/faces/m2/pgm/mr007_32.pgm unsuccessful, trying next directory
+Opening D:/a1/faces/mirror/pgm/mr007_32.pgm 
+Opening D:/a1/faces/mirror/pgm/mr008_12.pgm 
+Opening D:/a1/faces/mirror/pgm/mr034_41.pgm 
+Opening D:/a1/faces/mirror/pgm/mr037_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr044_41.pgm 
+Opening D:/a1/faces/mirror/pgm/mr049_12.pgm 
+Opening D:/a1/faces/mirror/pgm/mr051_42.pgm 
+Opening D:/a1/faces/mirror/pgm/mr053_31.pgm 
+Opening D:/a1/faces/mirror/pgm/mr071_31.pgm 
+Opening D:/a1/faces/mirror/pgm/mr088_32.pgm 
+Opening D:/a1/faces/mirror/pgm/mr092_12.pgm 
+Opening D:/a1/faces/mirror/pgm/mr101_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr102_42.pgm 
+Opening D:/a1/faces/mirror/pgm/mr109_32.pgm 
+Opening D:/a1/faces/mirror/pgm/mr123_42.pgm 
+Opening D:/a1/faces/mirror/pgm/mr135_42.pgm 
+Opening D:/a1/faces/mirror/pgm/mr142_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr154_42.pgm 
+Opening D:/a1/faces/mirror/pgm/mr170_31.pgm 
+Opening D:/a1/faces/mirror/pgm/mr187_21.pgm 
+Opening D:/a1/faces/mirror/pgm/mr188_41.pgm 
+Opening D:/a1/faces/mirror/pgm/mr193_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr201_42.pgm 
+Opening D:/a1/faces/mirror/pgm/mr203_21.pgm 
+Opening D:/a1/faces/mirror/pgm/mr209_32.pgm 
+Opening D:/a1/faces/mirror/pgm/mr210_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr212_12.pgm 
+Opening D:/a1/faces/mirror/pgm/mr221_31.pgm 
+Opening D:/a1/faces/mirror/pgm/mr242_22.pgm 
+Opening D:/a1/faces/mirror/pgm/mr250_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr250_12.pgm 
+Opening D:/a1/faces/mirror/pgm/mr278_32.pgm 
+Opening D:/a1/faces/mirror/pgm/mr287_22.pgm 
+Opening D:/a1/faces/mirror/pgm/mr292_21.pgm 
+Opening D:/a1/faces/mirror/pgm/mr320_11.pgm 
+Opening D:/a1/faces/mirror/pgm/mr328_21.pgm 
+Opening D:/a1/faces/mirror/pgm/mr334_21.pgm 
+Opening D:/a1/faces/mirror/pgm/mr338_31.pgm 
+Opening D:/a1/faces/mirror/pgm/mr358_41.pgm 
+Opening D:/a1/faces/mirror/pgm/mr359_31.pgm 
+Opening D:/a1/faces/mirror/pgm/mr370_12.pgm 
+0 [2.0 secs]
+Generating stats 0 [1.3 secs]
+Writing test-xm2vts-varied.asm 
+Generated test-xm2vts-varied.asm [total time 6.4 secs]

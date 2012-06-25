@@ -1,0 +1,67 @@
+# These are the makefile flags for Microsoft Visual C++ 2008
+# This file in included into makefile with a "!INCLUDE" in that file
+
+!IF  "$(CFG)" == "Debug"
+# -Zi  Generates complete debugging information
+# -W3  Sets warning level
+# -MTd Creates a debug multithreaded executable file
+# -DGSL_RANGE_CHECK tells the mat lib to do range checking
+# No need to define _DEBUG, compiler does it for us if -MTd flag is on
+# object files go to -Fo
+OUTDIR=./Debug
+CFLAGS=-nologo -Zi -W3 -MTd -EHsc -DWIN32 -DGSL_RANGE_CHECK $(INCL) -Fo"$(OUTDIR)/"
+LFLAGS=-nologo -nodefaultlib:LIBCD -nodefaultlib:LIBC
+LIBS=../gsl/lib_ms/mini_gslML.lib\
+     ../gsl/lib_ms/gslcblasML.lib\
+     ../jpeg/lib_ms/libjpeg.lib\
+     ../png/pnglib/libpng.lib\
+     ../png/zlib/zlib.lib\
+     $(OPENCV_HOME)/lib/cv210.lib\
+     $(OPENCV_HOME)/lib/cxcore210.lib\
+     $(OPENCV_HOME)/lib/highgui210.lib
+!ENDIF
+
+!IF  "$(CFG)" == "Release"
+# -O2 Creates fast code
+# -W3 Sets warning level
+# -MT Creates a multithreaded executable file
+# -GF enable string pooling
+# -Gy enable function-level linking
+# object files go to -Fo
+OUTDIR=./Release
+CFLAGS=-nologo -O2 -GF -Gy -W3 -MT -EHsc -DWIN32 $(INCL) -Fo"$(OUTDIR)/"
+LFLAGS=-nologo -nodefaultlib:LIBC
+LIBS=../gsl/lib_ms/mini_gslML.lib\
+     ../gsl/lib_ms/gslcblasML.lib\
+     ../jpeg/lib_ms/libjpeg.lib\
+     ../png/zlib/zlib.lib\
+     ../png/pnglib/libpng.lib\
+     $(OPENCV_HOME)/lib/cv210.lib\
+     $(OPENCV_HOME)/lib/cxcore210.lib\
+     $(OPENCV_HOME)/lib/highgui210.lib
+!ENDIF
+
+!IF  "$(CFG)" == "Profile"
+OUTDIR=./Debug
+CFLAGS=-nologo -O2 -W3 -EHsc -DWIN32 $(INCL) -Fo"$(OUTDIR)/"
+LFLAGS=-nologo -map -mapinfo:exports -mapinfo:fixups -mapinfo:lines -fixed:no
+LIBS=../gsl/lib_ms/mini_gslML.lib\
+     ../gsl/lib_ms/gslcblasML.lib\
+     ../jpeg/lib_ms/libjpeg.lib\
+     ../png/pnglib/libpng.lib\
+     ../png/zlib/zlib.lib\
+     $(OPENCV_HOME)/bin/libcxcore200.dll\
+     $(OPENCV_HOME)/bin/libcv200.dll\
+     $(OPENCV_HOME)/bin/libhighgui200.dll
+!ENDIF
+
+# We include setargv.obj for executables that do command line filename globbing.
+# PROGRAMFILES is inherited from the shell evironment (where it is
+# called ProgramFiles, but nmake converts it to upper case).  This allows us
+# to work with systems that use \Program Files or \Program Files x86.
+
+SETARGV = "$(PROGRAMFILES)/Microsoft Visual Studio 9.0/VC/lib/setargv.obj"
+
+# we include binmode.obj so files are opened as _O_BINARY, for compat with unix
+
+BINMODE = "$(PROGRAMFILES)/Microsoft Visual Studio 9.0/VC/lib/binmode.obj"

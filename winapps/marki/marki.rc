@@ -1,0 +1,27 @@
+// $marki.rc 3.0h milbo$
+
+#include "windows.h"
+#include "marki.hpp"
+
+IDR_MARKI_BUTTONS       BITMAP  MOVEABLE PURE   "marki.bmp"
+MARKI                   ICON    DISCARDABLE     "marki.ico"
+
+DLG DIALOG DISCARDABLE  20, 60, 124, 129
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "Select landmark"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "",IDC_FILE_NAME,5,2,105,12
+    LTEXT           "",IDC_MARKED,5,20,105,16
+    LTEXT           "",IDC_SAVED,5,38,105,12
+
+    LTEXT           "Image",IDC_STATIC,5,56,58,9
+    EDITTEXT        IDC_IMAGE_NBR,61,56,26,12,ES_LEFT|WS_BORDER|WS_TABSTOP|ES_MULTILINE
+    LTEXT           "",IDC_NBR_IMAGES,90,58,40,12
+
+    LTEXT           "Landmark",IDC_STATIC,5,74,58,9
+    EDITTEXT        IDC_LANDMARK,61,74,26,12,ES_LEFT|WS_BORDER|WS_TABSTOP|ES_MULTILINE
+    LTEXT           "",IDC_NBR_LANDMARKS,90,76,40,12
+
+    DEFPUSHBUTTON   "&Update",IDOK,63,92,40,14
+END
