@@ -2,6 +2,9 @@
 //
 // milbo cape town nov 2008
 
+#include<cv.h>
+#include<highgui.h>
+
 #include <windows.h>
 #include <commctrl.h>
 #include <vfw.h>
@@ -220,9 +223,12 @@ UpdateTitle();
 makepath(sgCameraImg, "", sGetTempDir(), "casm-temp", "bmp");
 lprintf("Temporary image %s", sgCameraImg);
 
+//cvShowImage ("test", &final);
+
 // get initial image to display in the display window
 WriteCameraImage(sgCameraImg);                     // write camera image to disk
 sLoadImage(gCameraImg, sgCameraImg, false, false); // read it back
+
 InvalidateRect(hgDispWnd, NULL, false);                  // trigger window repaint, will display the image
 
 _beginthread(AsmThread, 0, NULL);            // start ASM searches in parallel

@@ -17,8 +17,6 @@ cv::VideoCapture cam(0);/*static const int        ID_CAP = 99;     // id of came
 /*static HWND             hgCapWnd;        // camera capture window, in main window*/
 static CAPSTATUS        gCapStatus;
 static CAPDRIVERCAPS    gDriverCaps;
-IplImage *img;
-Image *final;
 
 //-----------------------------------------------------------------------------
 // this also init the globals gDriverCaps and gCapStatus
@@ -84,7 +82,7 @@ unlink(sCameraImg);*/
 
 void WriteCameraImage (const char sCameraImg[])
 {
-/*// Call capGrabFrame twice to flush images stored in the camera queue.  This
+// Call capGrabFrame twice to flush images stored in the camera queue.  This
 // makes the screen image more responsive to the current position of the
 // subject, especially when using slow stacked ASM models.
 // TODO does this slow down the frame rate and is there a better way of doing this?
@@ -95,14 +93,7 @@ capGrabFrame(hgCapWnd);
 // now get the actual frame we want, and save it to disk
 
 capGrabFrame(hgCapWnd);
-capFileSaveDIB(hgCapWnd, sCameraImg);*/
-
-	//grab a matrix from camera, convert to IplImage, and then convert to Image
-	cv::Mat frame;
-	cam.retrieve(frame);
-	img = &IplImage(frame);
-	memcpy(&final, &img, sizeof(img));
-	cv::imwrite(sCameraImg, frame);
+capFileSaveDIB(hgCapWnd, sCameraImg);
 }
 
 //-----------------------------------------------------------------------------
