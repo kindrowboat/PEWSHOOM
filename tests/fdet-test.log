@@ -1,8 +1,0 @@
-Writing fdet.log for 1 file
-Command: fdet ../data/testImage.jpg 
-[1] Reading ../data/testImage.jpg 
-[1.000 secs]
-"2000 testImage"
-{ 1 9 14 -7 103 103 0 42 23 -25 21
-}
-Got detector shapes for 1 of 1 files
