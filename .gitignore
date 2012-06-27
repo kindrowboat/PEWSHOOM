@@ -19,3 +19,7 @@ obj/
 _ReSharper*/
 *.sdf
 */[Dd]ebug/*
+[Bb]in/*
+
+*.opensdf
+*.ipch
