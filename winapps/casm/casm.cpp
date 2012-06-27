@@ -14,6 +14,10 @@
 #include "camera.hpp"
 #include "winfile.hpp"
 
+extern RgbImage img;
+
+static void DisplayImage (HDC hdc, HWND hWnd, const RgbImage &Img);
+
 static const char *CASM_VERSION   = "version 3.0";
        const char *sgProgramName  = "Casm"; // non static so Err() can display it
 static const char *sgDispClass    = "disp";
@@ -223,8 +227,6 @@ UpdateTitle();
 makepath(sgCameraImg, "", sGetTempDir(), "casm-temp", "bmp");
 lprintf("Temporary image %s", sgCameraImg);
 
-//cvShowImage ("test", &final);
-
 // get initial image to display in the display window
 WriteCameraImage(sgCameraImg);                     // write camera image to disk
 sLoadImage(gCameraImg, sgCameraImg, false, false); // read it back
@@ -290,10 +292,10 @@ while (!fgShutdown)
     SHAPE StartShape;
     DET_PARAMS DetParams;
     double MeanTime;
-    Image Img;
+//    Image Img;
 
     WriteCameraImage(sgCameraImg);              // write current camera image to disk
-    sLoadImage(Img, sgCameraImg, false, false); // read camera image back from disk
+    sLoadImage(img, sgCameraImg, false, false); // read camera image back from disk
 
     if (!fgShowCamera && !fgShutdown)
         {
@@ -311,7 +313,7 @@ while (!fgShutdown)
         // casm will issue an error message correctly but then crash).
 
         AsmShape = AsmSearch(StartShape, DetParams, MeanTime,
-                             Img, sgCameraImg, false,
+                             img, sgCameraImg, false,
                              sConfFile0, sConfFile1a,
                              sDataDir, NULL, false);
 
@@ -332,7 +334,7 @@ while (!fgShutdown)
     while (fgDataInUseByMainThread)
         ;
     fgDataInUseByAsmThread = true;
-    gCameraImg = Img;
+    gCameraImg = img;
     gAsmShape = AsmShape;
     gMeanFrameTime = MeanFrameTime;
     fgDataInUseByAsmThread = false;
@@ -447,23 +449,23 @@ HDC hdc = BeginPaint(hWnd, &ps);
 while (fgDataInUseByAsmThread)
     ;
 fgDataInUseByMainThread = TRUE;
-RgbImage Img(gCameraImg);         // image that was used for the last ASM search
+RgbImage img(gCameraImg);         // image that was used for the last ASM search
 SHAPE AsmShape(gAsmShape);  // ASM shape from last ASM search
 fgDataInUseByMainThread = FALSE;
 
 if (fgPaleface)
-    LightenImage(Img);
+    LightenImage(img);
 
 // AsmShape.nrows() will be non zero if the facial landmarks are valid
 // (and will be 0 if the global face detector did not find a face).
 
 if (!fgShowCamera && AsmShape.nrows())
     {
-    DrawShape(Img, AsmShape, C_RED, fgConnectDots, C_DRED, fgShowNbrs);
+    DrawShape(img, AsmShape, C_RED, fgConnectDots, C_DRED, fgShowNbrs);
     if (fgCrop)
-        CropImageToShape(Img, AsmShape);
+        CropImageToShape(img, AsmShape);
     }
-DisplayImage(hdc, hWnd, Img);
+DisplayImage(hdc, hWnd, img);
 unsigned Color = RGB(255, 255, 0);  // yellow;
 if (!fgCameraInitialized)
     WindowMsg(RGB(0, 0, 0), "Initializing camera");
