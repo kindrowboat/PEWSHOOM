@@ -13,18 +13,19 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+<<<<<<< HEAD
+=======
+[Bb]in
+*/[Dd]ebug*/
+>>>>>>> 1cb6b45e9d71542072750b2acb9e5294c00e46b9
 *.sbr
 obj/
 */[Rr]elease/*
 _ReSharper*/
 *.sdf
-<<<<<<< HEAD
-*.opensdf
-=======
 */[Dd]ebug/*
 [Bb]in/*
 
 *.opensdf
 *.ipch
 *.sdf
->>>>>>> working

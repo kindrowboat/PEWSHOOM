@@ -17,8 +17,8 @@ cv::VideoCapture cam(0);/*static const int        ID_CAP = 99;     // id of came
 /*static HWND             hgCapWnd;        // camera capture window, in main window*/
 static CAPSTATUS        gCapStatus;
 static CAPDRIVERCAPS    gDriverCaps;
-IplImage *img;
-Image *final;
+
+RgbImage img;
 
 //-----------------------------------------------------------------------------
 // this also init the globals gDriverCaps and gCapStatus
@@ -97,11 +97,10 @@ capGrabFrame(hgCapWnd);
 capGrabFrame(hgCapWnd);
 capFileSaveDIB(hgCapWnd, sCameraImg);*/
 
-	//grab a matrix from camera, convert to IplImage, and then convert to Image
 	cv::Mat frame;
 	cam.retrieve(frame);
-	img = &IplImage(frame);
-	memcpy(&final, &img, sizeof(img));
+	img = Image(frame.cols, frame.rows, false);
+	memcpy(img.buf, frame.ptr(), sizeof(img));	
 	cv::imwrite(sCameraImg, frame);
 }
 
