@@ -2,7 +2,7 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="9.00"
-	Name="stasm"
+	Name="fdet"
 	ProjectGUID="{EB19ADD4-0B8C-48C2-85C3-AA7B3D578CC8}"
 	TargetFrameworkVersion="0"
 	>
@@ -38,7 +38,7 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				TypeLibraryName=".\Release/stasm.tlb"
+				TypeLibraryName=".\Release/fdet.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -51,7 +51,7 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Release/stasm.pch"
+				PrecompiledHeaderFile=".\Release/fdet.pch"
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
@@ -72,11 +72,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ..\gsl\lib_ms\mini_gslML.lib ..\gsl\lib_ms\gslcblasML.lib ..\jpeg\lib_ms\libjpeg.lib \OpenCV2.1\lib\cv210.lib \OpenCV2.1\lib\cxcore210.lib \OpenCV2.1\lib\highgui210.lib setargv.obj binmode.obj ..\png\pnglib\libpng.lib ..\png\zlib\zlib.lib"
-				OutputFile=".\Release/stasm.exe"
+				OutputFile=".\Release/fdet.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				IgnoreDefaultLibraryNames="LIBC"
-				ProgramDatabaseFile=".\Release/stasm.pdb"
+				ProgramDatabaseFile=".\Release/fdet.pdb"
 				SubSystem="1"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -94,7 +94,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/stasm.bsc"
+				OutputFile=".\Release/fdet.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -130,7 +130,7 @@
 			/>
 			<Tool
 				Name="VCMIDLTool"
-				TypeLibraryName=".\Debug/stasm.tlb"
+				TypeLibraryName=".\Debug/fdet.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -139,7 +139,7 @@
 				AdditionalIncludeDirectories="\OpenCV2.1\include\opencv;..\regex;..\gsl;..\gsl\gsl;..\image;..\jpeg;..\mat;..\rowley;..\stasm;..\tasm;..\png;..\png\zlib;..\png\pnglib"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;HAVE_CONFIG_H;STDC_HEADERS;REGEX_MALLOC"
 				RuntimeLibrary="1"
-				PrecompiledHeaderFile=".\Debug/stasm.pch"
+				PrecompiledHeaderFile=".\Debug/fdet.pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
@@ -161,12 +161,12 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib ..\gsl\lib_ms\mini_gslML.lib ..\gsl\lib_ms\gslcblasML.lib ..\jpeg\lib_ms\libjpeg.lib \OpenCV2.1\lib\cv210.lib \OpenCV2.1\lib\cxcore210.lib \OpenCV2.1\lib\highgui210.lib setargv.obj binmode.obj ..\png\pnglib\libpng.lib ..\png\zlib\zlib.lib"
-				OutputFile=".\Debug/stasm.exe"
+				OutputFile=".\Debug/fdet.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				IgnoreDefaultLibraryNames="LIBCD,LIBC"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\Debug/stasm.pdb"
+				ProgramDatabaseFile=".\Debug/fdet.pdb"
 				SubSystem="1"
 				RandomizedBaseAddress="1"
 				DataExecutionPrevention="0"
@@ -184,7 +184,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/stasm.bsc"
+				OutputFile=".\Debug/fdet.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
