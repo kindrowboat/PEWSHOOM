@@ -13,6 +13,17 @@ Thumbs.db
 *.cache
 *.ilk
 *.log
+<<<<<<< HEAD
+[Bb]in
+*/[Dd]ebug/*
+*.sbr
+obj/
+*/[Rr]elease*/
+_ReSharper*/
+*.sdf
+*.opensdf
+*.ipch
+=======
 *.sbr
 obj/
 */[Rr]elease/*
@@ -24,3 +35,4 @@ _ReSharper*/
 *.opensdf
 *.ipch
 *.sdf
+>>>>>>> dc863d0d454f1d968caeb9ce7102ac6f43dcc54a
