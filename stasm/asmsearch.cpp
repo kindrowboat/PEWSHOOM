@@ -234,12 +234,12 @@ AsmSearch (
     double &MeanTime,        // out: mean time per image (face det failed excluded)
     const RgbImage &RgbImg,  // in: find face features in this image
     const char sImage[],     // in: file path for RgbImg, for err msgs
-    const bool fRowley,      // in: true to use Rowley detector, else VJ
-    const char sConfFile0[], // in: 1st config filename
-    const char sConfFile1[], // in: 2nd config filename, "" if none
-    const char sDataDir[],   // in: data directory
-    const char sShapeFile[], // in: if not NULL then use face detector in here
-    bool fIssueWarnings)     // in: true to issue warnings if needed
+    const bool fRowley,      // in: true to use Rowley detector, else VJ (default: true)
+    const char sConfFile0[], // in: 1st config filename (default: "../data/mu-68-1d.conf")
+    const char sConfFile1[], // in: 2nd config filename, "" if none (default: "../data/mu-76-2d.conf")
+    const char sDataDir[],   // in: data directory (default: "../data")
+    const char sShapeFile[], // in: if not NULL then use face detector in here (default: NULL)
+    bool fIssueWarnings)     // in: true to issue warnings if needed (default: TRUE)
 {
 static ASM_MODEL Models[NMODELS_MAX];
 const int nInitializedModels = nInitAsmModels(Models, sConfFile0, sConfFile1);

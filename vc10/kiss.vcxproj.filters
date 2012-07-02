@@ -153,6 +153,9 @@
     <ClCompile Include="..\kiss\kiss.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\stasm\stasm_dll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\jpeg\cderror.h">
@@ -186,6 +189,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\rowley\tclHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stasm\stasm_dll.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

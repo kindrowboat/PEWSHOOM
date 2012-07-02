@@ -264,6 +264,7 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <ClCompile Include="..\stasm\stasm_dll.cpp" />
     <ClCompile Include="..\tasm\mrand.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -405,6 +406,7 @@
     <ClInclude Include="..\regex\regex.h" />
     <ClInclude Include="..\regex\regex_config.h" />
     <ClInclude Include="..\rowley\tclHash.h" />
+    <ClInclude Include="..\stasm\stasm_dll.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />

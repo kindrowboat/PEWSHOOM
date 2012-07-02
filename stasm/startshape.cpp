@@ -296,7 +296,7 @@ DetParams.lex = DetParams.rex = INVALID; // mark eyes as unavailable
 
 if (!sShapeFile)
     {
-    if (fFindDetParams(DetParams, sImage, DetAttr, sDataDir, fIssueWarnings))
+	    if (fFindDetParams(DetParams, sImage, DetAttr, sDataDir, fIssueWarnings))
         nGenDet = 1;    // successful
     }
 else    // use shape file

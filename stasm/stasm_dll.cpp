@@ -66,7 +66,7 @@ void AsmSearchDll (
                 }
 
     SHAPE StartShape;           // dummy args
-    DET_PARAMS DetParams;       // dummy arg for AsmSearch
+    DET_PARAMS DetParams;       // dummy arg for AsmSearchd
     double MeanTime;            // dummy arg for AsmSearch
     SHAPE Shape = AsmSearch(StartShape, DetParams, MeanTime,
                             Img, image_name, FALSE, sConfFile0, sConfFile1);
